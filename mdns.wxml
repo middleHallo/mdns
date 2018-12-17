@@ -1,0 +1,18 @@
+<!--pages/mdns/mdns.wxml-->
+<button bindtap='startDiscovery'>开始搜索</button>
+<button bindtap='stopDiscovery'>停止搜索</button>
+<view class='mdns_list'>
+    <view wx:for="{{lists}}" wx:key="{{index}}" class='row'>
+        <text class='serverName'>设备服务名：{{item.serviceName}}</text>
+        <text class='ipPort'>ip地址：{{item.ip}}:{{item.port}}</text>
+        <text class='ipPort'>当前服务类型：{{item.serviceType}}</text>
+    </view>
+</view>
+<view>===========以下为解析失败的服务设备===============</view>
+
+<view class='mdns_list'>
+    <view wx:for="{{resolveFailList}}" wx:key="{{index}}" class='row'>
+        <text class='serverName'>设备服务名：{{item.serviceName}}</text>
+        <text class='ipPort'>连接服务类型：{{item.serviceType}}</text>
+    </view>
+</view>
